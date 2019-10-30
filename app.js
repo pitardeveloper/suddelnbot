@@ -898,11 +898,11 @@ client.on('ready',async () => {
      const config = {
       name: "● Rainbow", // اسم الرتبة
       guildid: "579114200975147008", // اي دي السيرفر
-      sec: 1 // عدد الثواني
+      sec: 0.5 // عدد الثواني
     };
     let guild = client.guilds.get(config.guildid);
     let role = guild.roles.find(role => role.name === config.name);
-    let sec = config.sec * 1000;
+    let sec = config.sec * 999999;
     if(!guild) return console.warn("Unkown guild.");
     if(!role) return console.warn("Unkown role");
     if(role.position >= guild.members.get(client.user.id).highestRole.position) return console.warn("**يجب ان تكون رتبة البوت فوق رتبة الرينبو**");
