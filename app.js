@@ -935,7 +935,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === 'برب') {
-    msg.reply('**تيت لا اطول علينا يا غالي**');
+    msg.reply('**تيت لا تطول علينا يا غالي**');
   }
 });
 
