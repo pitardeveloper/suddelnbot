@@ -892,28 +892,6 @@ client.on('message', msg => {
     }
     });
 
-client.on('ready',async () => {
-  console.log(client.user.username);
-  try {
-     const config = {
-      name: "● Rainbow", // اسم الرتبة
-      guildid: "579114200975147008", // اي دي السيرفر
-      sec: 1 // عدد الثواني
-    };
-    let guild = client.guilds.get(config.guildid);
-    let role = guild.roles.find(role => role.name === config.name);
-    let sec = config.sec * 1000;
-    if(!guild) return console.warn("Unkown guild.");
-    if(!role) return console.warn("Unkown role");
-    if(role.position >= guild.members.get(client.user.id).highestRole.position) return console.warn("**يجب ان تكون رتبة البوت فوق رتبة الرينبو**");
-    setInterval(() => {
-      role.edit({ 
-      color: "RANDOM"
-    });
-    }, sec);
-  } catch(e) {
-  }
-}); 
 
 client.on('message', msg => {
   if (msg.content === 'باك') {
