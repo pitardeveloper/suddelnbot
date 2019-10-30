@@ -916,6 +916,42 @@ client.on('ready',async () => {
   }
 }); 
 
+client.on('message', msg => {
+  if (msg.content === 'باك') {
+    msg.reply('**ولكم منور يا عسل**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'السلام عليكم') {
+    msg.reply('**وعليكم السلام ورحمة الله وبركاته**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'باي') {
+    msg.reply('**تيت لا تطول علينا بالله :(**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'برب') {
+    msg.reply('**تيت لا اطول علينا يا غالي**');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === '.') {
+    msg.reply('أطلق ثبات وجودك :kissing_heart::kissing_heart:');
+  }
+});
+
+client.on('message', msg => {
+  if (msg.content === 'هلا') {
+    msg.reply('**هلا وغلا ارحب**');
+  }
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
