@@ -64,9 +64,8 @@ client.on('message', message => {
      if (message.content === "Shelp") {
 message.author.send("اوامر البوت الخورافية :]" + `  **
 "الاوامر العامة"
-Sping                   | سرعة الأتصال - تـم الـتـحـديـث
+Sping                   | سرعة اتصال البوت
 Sid                     | معلومــات عــن حســابــك
-Scount                  | يطلع لك اعضاء السيرفر - جــديــد
 Savatar                 | صورتك في الدسكورد
 Ssuggestion             | للاقتراح اي اقتراح للسيرفر
 "الاوامر الادارية" 
@@ -83,9 +82,6 @@ Sunmutechannel          | لفتح الشات
 Sct                     | لصناعة روم كتابي
 Scv                     | لصناعة روم صوتي
 Srooms                  | يطلع لك اسامي وارقام الرومات
-Smove                   | لتقوم بسحب شخص بالروم الصوتي
-Sbans                   | يطلع لك الاشخاص المبندين فالسيرفر - جــديــد
-Ssetvoice               | يصنع لك روم صوتي للاشخاص اللي داخلين روم صوتي - جــديــد
 Sbackup                 | يرجعلك سيرفرك بعد ما تهكر برومات ورتب كلها جديدة / صيانة
 
 "اوامر الالعاب"
@@ -100,21 +96,16 @@ Sazkar                  | لقراءة اذكار
     }
 });
 
+// -ping
+   client.on('message', message => {
+     if (message.content === "!ping") {
+      const embed = new Discord.RichEmbed()
+ 
+  .setColor("#FF0000")
+  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
 
-  client.on('message', message = {
-    if(!message.channel.guild) return;
-if (message.content.startsWith('Sping')) {
-if(!message.channel.guild) return;
-var msg = `${Date.now() - message.createdTimestamp}`
-var api = `${Math.round(client.ping)}`
-if (message.author.bot) return;
-let embed = new Discord.RichEmbed()
-.setAuthor(message.author.username,message.author.avatarURL)
-.setColor('RANDOM')
-.addField('Time Taken',msg +  ms)
-.addField('WebSocket',api +  ms)
-message.channel.send({embedembed});
-}
+  message.channel.sendEmbed(embed);
+    }
 });
  
 
@@ -581,34 +572,6 @@ return message.reply("**:white_check_mark: .. تم فك الميوت عن الش
 });
 
 
- client.on('message', message = {
-var prefix = S;
-       if(message.content === prefix + mutechat) {
-                           if(!message.channel.guild) return message.reply(' This command only for servers');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' __ليس لديك صلاحيات__');
-              message.channel.overwritePermissions(message.guild.id, {
-            SEND_MESSAGES false
-
-              }).then(() = {
-                  message.reply(__تم تقفيل الشات__ ? )
-              });
-                }
-FIRE BOT
-    if(message.content === prefix + unchat) {
-                        if(!message.channel.guild) return message.reply(' This command only for servers');
-
-   if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('__ليس لديك صلاحيات__');
-              message.channel.overwritePermissions(message.guild.id, {
-            SEND_MESSAGES true
-
-              }).then(() = {
-                  message.reply(__تم فتح الشات__?)
-              });
-    }
-       
-});
-
 var prefix = "S"
 client.on('message', message => {
   if (message.author.x5bz) return;
@@ -937,142 +900,6 @@ client.on('message', msg => {
 client.on('message', msg => {
   if (msg.content === 'هاي') {
     msg.reply('**هايات**');
-  }
-});
-
-client.on('guildMemberAdd', member = {
-    let channel = member.guild.channels.find('gate', 'Welcome In Suddenly Server.');
-    let memberavatar = member.user.avatarURL
-      if (!channel) return;
-    let embed = new Discord.RichEmbed()
-        .setColor('RANDOM')
-        .setThumbnail(memberavatar)
-        .addField('•??Name» الإسم',`${member}`)
-        .addField('•??Welcome » نورت السيرفر' , `Welcome to the server, ${member}`)
-        .addField('•?? User » اي دي العضو', [ + `${member.id}` + ] )
-                .addField('? انت العضو رقم',`${member.guild.memberCount}`)                     
-                                     .addField('•??Server Name » اسم السيرفر', `${member.guild.name}`,true)
-    .addField('•??Time Create » مدة انشاء حسابك', member.user.createdAt.toLocaleString(), true)
- 
-                                       
-     .setFooter(LegendGang)
-        .setTimestamp()
-   
-      channel.sendEmbed(embed);
-    });
-
- var dat = JSON.parse(fs.readFileSync('.invite.json', 'utf8'));
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
-client.on(ready, () = {
-    var guild;
-    while (!guild)
-        guild = client.guilds.get(579114200975147008)
-    guild.fetchInvites().then((data) = {
-        data.forEach((Invite, key, map) = {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        })
-    })
-})
-client.on(guildMemberAdd, (member) = {
-    let channel = member.guild.channels.find('gate', Welcome In Suddenly Server.);
-    if (!channel) {
-        console.log(!channel fails);
-        return;
-    }
-    if (member.id == client.user.id) {
-        return;
-    }
-    console.log('made it till here!');
-    var guild;
-    while (!guild)
-        guild = client.guilds.get(579114200975147008)
-    guild.fetchInvites().then((data) = {
-        data.forEach((Invite, key, map) = {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv]  Invite.uses) {
-                    console.log(3);
- channel.send(`${member} Invited by ${Invite.inviter}`)
- }
-            dat[Inv] = Invite.uses;
-        })
-    })
-});
-
-
- client.on('message', message = {
-              if (!message.channel.guild) return;
-      if(message.content =='Scount')
-      var SaifDz = new Discord.RichEmbed()
-      .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL)
-      .setTitle('?? Members info')
-      .addBlankField(true)
-      .addField('عدد اعضاء السيرفر',`${message.guild.memberCount}`)
-      message.channel.send(SaifDz);
-    });
-
-
-client.on('message', message = {
-    var prefix = S;
-if(!message.channel.guild) return;
-if(message.content.startsWith(prefix + 'move')) {
- if (message.member.hasPermission(MOVE_MEMBERS)) {
- if (message.mentions.users.size === 0) {
- return message.channel.send(``لاستخدام الأمر اكتب هذه الأمر   +prefix+ move [USER]``)
-}
-if (message.member.voiceChannel != null) {
- if (message.mentions.members.first().voiceChannel != null) {
- var authorchannel = message.member.voiceChannelID;
- var usermentioned = message.mentions.members.first().id;
-var embed = new Discord.RichEmbed()
- .setTitle(Succes!)
- .setColor(#000000)
- .setDescription(`لقد قمت بسحب @${usermentioned} الى الروم الصوتي الخاص بك? `)
-var embed = new Discord.RichEmbed()
-.setTitle(`You are Moved in ${message.guild.name}`)
- .setColor(RANDOM)
-.setDescription(`@${message.author.id} Moved You To His Channel!nServer -- ${message.guild.name}`)
- message.guild.members.get(usermentioned).setVoiceChannel(authorchannel).then(m = message.channel.send(embed))
-message.guild.members.get(usermentioned).send(embed)
-} else {
-message.channel.send(``لا تستطيع سحب + message.mentions.members.first() + `يجب ان يكون هذه العضو في روم صوتي`)
-}
-} else {
- message.channel.send(``يجب ان تكون في روم صوتي لكي تقوم بسحب العضو أليك``)
-}
-} else {
-message.react(?)
- }}});
-
-
-client.on('message', message = {
-    if (message.content.startsWith(Sbans)) {
-        message.guild.fetchBans()
-        .then(bans = message.channel.send(`${bans.size} عدد الاشخاص المبندين من السيرفر `))
-  .catch(console.error);
-}
-});
-
-
-client.on('message',async message = {
-  if(message.content.startsWith(prefix + setvoice)) {
-  if(!message.guild.member(message.author).hasPermissions('MANAGE_CHANNELS')) return message.reply('? ليس لديك الصلاحيات الكافية');
-  if(!message.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return message.reply('? ليس معي الصلاحيات الكافية');
-  message.channel.send('? تم عمل الروم بنجاح');
-  message.guild.createChannel(`Voice Online  [ ${message.guild.members.filter(m = m.voiceChannel).size} ]` , 'voice').then(c = {
-    console.log(`Voice online channel setup for guild n ${message.guild.name}`);
-    c.overwritePermissions(message.guild.id, {
-      CONNECT false,
-      SPEAK false
-    });
-    setInterval(() = {
-      c.setName(`Voice Online  [ ${message.guild.members.filter(m = m.voiceChannel).size} ]`)
-    },1000);
-  });
   }
 });
 
