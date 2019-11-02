@@ -36,7 +36,7 @@ client.on('message', message => {
 
 // playing
 client.on('ready', () => {
-                                                                                                                                                                                                                                                                              client.user.setGame(`Bot By: KiMoMixPRo / SHelp For Help`,'https://www.twitch.tv/v5bz');
+                                                                                                                                                                                                                                                                              client.user.setGame(`Shelp For help`,'https://www.twitch.tv/v5bz');
 });
 
 
